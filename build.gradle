@@ -1,0 +1,46 @@
+apply plugin: 'java-library'
+apply plugin: 'jacoco'
+apply plugin: 'com.github.kt3k.coveralls'
+
+buildscript {
+	repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.0.0'
+    }
+}
+
+repositories {
+    jcenter()
+}
+
+ext {
+	guiceVersion = "4.2.0"
+ 	junitVersion = "4.12"
+ 	slf4jVersion = "1.7.25"
+    PUBLISH_GROUP_ID = 'com.gemengine'
+    PUBLISH_ARTIFACT_ID = 'gem-engine'
+    PUBLISH_VERSION = '0.1'
+}
+
+dependencies {
+    implementation "com.google.inject:guice:${guiceVersion}"
+    implementation "org.slf4j:slf4j-simple:${slf4jVersion}"
+    testImplementation "junit:junit:${junitVersion}"
+}
+
+test {
+    testLogging {
+        events "passed", "skipped", "failed"
+        exceptionFormat "full"
+    }
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled = true // coveralls plugin depends on xml format report
+        html.enabled = true
+    }
+}
