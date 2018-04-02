@@ -1,6 +1,4 @@
-# Gem Engine [![Build Status](https://travis-ci.org/Ughuuu/gem-engine.svg?branch=master)](https://travis-ci.org/Ughuuu/gem-engine) [![Coverage Status](https://coveralls.io/repos/github/Ughuuu/gem-engine/badge.svg?branch=master&service=github)](https://coveralls.io/github/Ughuuu/gem-engine?branch=master)
-
-![GemEngine Logo](https://raw.githubusercontent.com/Ughuuu/ughuuu.github.io/master/assets/gem.png)
+# Gem Engine [![Build Status](https://travis-ci.org/Ughuuu/gem-engine.svg?branch=master)](https://travis-ci.org/Ughuuu/gem-engine-asset-system) [![Coverage Status](https://coveralls.io/repos/github/Ughuuu/gem-engine/badge.svg?branch=master&service=github)](https://coveralls.io/github/Ughuuu/gem-engine-asset-system?branch=master)
 
 Game Engine written in Java.
 
