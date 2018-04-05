@@ -1,0 +1,1 @@
+./gradlew sonarqube -Dsonar.organization=ughuuu-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=db288b1b75c35182ebc647cd3be449869b743715

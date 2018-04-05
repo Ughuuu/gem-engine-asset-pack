@@ -1,6 +1,7 @@
 apply plugin: 'java-library'
 apply plugin: 'jacoco'
 apply plugin: 'com.github.kt3k.coveralls'
+apply plugin: 'org.sonarqube'
 
 buildscript {
 	repositories {
@@ -9,16 +10,20 @@ buildscript {
 
     dependencies {
         classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.0.0'
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.6.2"
     }
 }
 
 repositories {
     jcenter()
+    maven { url "https://dl.bintray.com/ughuuu/gem-engine" }
     maven { url 'https://jitpack.io' }
 }
 
 ext {
-	gemEngineCommonVersion = "-SNAPSHOT"
+	javaSyncVersion = "master-SNAPSHOT"
+	gemEngineCommonVersion = "master-SNAPSHOT"
+	gdxVersion = "1.9.8"
 	guiceVersion = "4.2.0"
  	junitVersion = "4.12"
  	slf4jVersion = "1.7.25"
@@ -28,7 +33,9 @@ ext {
 }
 
 dependencies {
-    implementation "com.github.Ughuuu:gem-engine-common:${gemEngineCommonVersion}"
+	implementation "com.github.Ughuuu:JavaSync:${javaSyncVersion}"
+	implementation "com.badlogicgames.gdx:gdx:${gdxVersion}"
+	implementation "com.github.Ughuuu:gem-engine-common:${gemEngineCommonVersion}"
     implementation "com.google.inject:guice:${guiceVersion}"
     implementation "org.slf4j:slf4j-simple:${slf4jVersion}"
     testImplementation "junit:junit:${junitVersion}"
